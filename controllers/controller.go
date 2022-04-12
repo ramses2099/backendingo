@@ -33,6 +33,7 @@ func GetAllPost(w http.ResponseWriter, r *http.Request) {
 
 //w Response r Request
 func AddPost(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-type", "application/json")
 	var post models.Post
 	err := json.NewDecoder(r.Body).Decode(&post)
 	if err != nil {
